@@ -3,13 +3,76 @@
 The PositionMonitor solution contains various projects to aid in managing
 positions.
 
+## Open
+
+This tab outlines all remaining open position for the day:
+
+* Instrument - the ticker + exchange for the position
+* User - the user who has exercised the position
+* Remaining Volume - the amount exercised for the day for the position
+
+## Closed
+
+This tab outlines all position closed for the day:
+
+* Instrument - the ticker + exchange for the position
+* Quantity - the total amount of stocks closed
+* Buy/Sell Qty - the B/S amount exercised for the day for the position
+* Buy/Sell Avg - the B/S price average for the day for the position
+* ProfitLoss - the profit/loss made from closing the position
+* User - the user who has exercised the trade
+
+## Trades
+
+This tab outlines all positions (both open/close) exercised for the day:
+
+* Instrument - the ticker + exchange for the position
+* User - the user who has exercised the trade
+
+## Investments
+
+This tab outlines all current strategies and its current execution.
+
+* Actions - Shortcut tools for user access
+  * Mark as Done
+  * Prefill
+  * Copy to Clipboard
+  * Show Change History
+  * Delete
+
+![alt text](https://hlam-static-public.s3.ap-southeast-2.amazonaws.com/position-monitor-actions.png)
+
+The rest of the tab details each strategies information and the progress of its execution.
+
+![alt text](https://hlam-static-public.s3.ap-southeast-2.amazonaws.com/position-monitor-stategy.png)
+
+## Trade Approval
+
+Before a trade is executed, it must be approved by another within the company. This tab outlines a trade proposal as well as its following details.
+
+* Date
+* Requested By
+* Approval State
+* Code
+* B/S
+* Quantity
+* Limit Price
+* Order Duration
+* Broker
+* Approved By
+* Notes
+* Actions
+
+![alt text](https://hlam-static-public.s3.ap-southeast-2.amazonaws.com/position-monitor-approval.png)
+
+
 ## Projects
 
 A description of each project.
 
 ### PositionMonitor (GUI)
 
-Desktop application deployed to director's PC. This desktop 
+Desktop application deployed to director's PC. This desktop
 application interacts with a generic WebSockets API (WebSocketAlertFoundations).
 
 Refer to Readme within PositionMonitor folder for further documentation.
