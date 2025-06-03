@@ -10,12 +10,68 @@ An algorithm that arbitrage opportunities between ASX and CXA.
 Arbitrage opportunities are found throughout the day, as well as pre-open. Note that pre-open phases occur before and after market open.
 
 ### Intra-day Arbitrage Opportunities
-* Forward: BUY from **CXA** at _ask_, SELL to **ASX** at _bid_
-* Reverse: BUY from **ASX** at _ask_, SELL to **CXA** at _bid_
+* Forward: BUY from **CXA** at _ask_, SELL to **ASX** at _bid_.
+* Reverse: BUY from **ASX** at _ask_, SELL to **CXA** at _bid_.
 
 ### Pre-Open Arbitrage Opportunities
 * Forward: BUY from **CXA** at _ask_, SELL to **ASX** (at _match_ before open, at _last_ after close)
-* Reverse: BUY from **ASX** (at _match_ before open, at _last_ after close), SELL to **CXA** at _bid_
+* Reverse: BUY from **ASX** (at _match_ before open, at _last_ after close), SELL to **CXA** at _bid_.
+
+## Alerts
+
+### Column Headings
+![alt text](https://hlam-static-public.s3.ap-southeast-2.amazonaws.com/cxa-alert.png)
+
+Instrument - Security code/Instrument for the alert.
+
+P/L $ - Profit/Loss \$ of the Arbitrage.
+
+P/L % - Profit/Loss % of the Arbitrage.
+
+Last - Last price of the instrument.
+
+Match - Match price of the instrument.
+
+Hits - How many times an arbitrage opportunity has occurred.
+
+Status - Trading Status:
+
+* H - Trading Halt.
+
+* P - Pre-open.
+
+## History
+
+### Column Headings
+![alt text](https://hlam-static-public.s3.ap-southeast-2.amazonaws.com/cxa-history.png)
+
+ArbStart - The time the the arb opportunity started.
+
+LastUpdate - The last time that the alerts information was updated.
+
+Instrument - Security code/Instrument for the alert.
+
+P/L $ - Profit/Loss \$ of the Arbitrage.
+
+P/L % - Profit/Loss % of the Arbitrage.
+
+Last - Last price of instrument.
+
+Match - Match Price of instrument.
+
+Hits - How many times an arbitrage opportunity has occurred.
+
+Secs Open - If a position was opened, indicates how long the position was opened for.
+
+Status - Trading Status:
+
+* H - Trading Halt.
+
+* P - Pre-open.
+
+## Tool Instruments
+
+Indicates how many and which tools/instruments are being tracked by CxaTmArb
 
 ## Projects
 
