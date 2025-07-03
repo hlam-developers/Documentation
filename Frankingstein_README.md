@@ -51,3 +51,19 @@ If querying for a Scrip takeover, the calculator will display a price step table
 The Spread Matrix tab is used to calculate spread returns for a given scrip takeover, displayed in a matrix table and organised by price steps. This is also customisable by parameters.
 
 ![alt text](https://hlam-public.s3.ap-southeast-2.amazonaws.com/spread-matrix.png)
+
+## Documentation
+
+### Frankingstein.Algorithm
+
+The algorithm subscribes to the _{env}-frankingstein-configuration_ table for takeover configurations, then calls to the _{env}-datafeed_ table for pricing data. This has been implemented as a request-based algorithm rather than a subscription-based algorithm because alerts need to be calculated outside of the time-frame to which pricing messages are sent (especially during halt/auction periods).
+
+Conveniently, if the algorithm detects a match price for a takeover, that is indicative of a halt or auction period. In this case, the match price will be prioritised for use over the current bid/ask. Once the halt or auction period is over, the match price variable is no longer filled and the algorithm reverts back to using the bid/ask.
+
+Alert fields are filled out and updated in the front-end and then recognised in the algorithm. At the end of each calculation iteration, the algorithm checks for alert triggers and persists an alert to _{env}-alerts_ if necessary.
+
+### Frankingstein.Blazor
+
+The blazor application uses some TradingToolComon.Blazor components, but are mostly pure HTML/CSS/JS. 
+
+The application subscribes to _{env}-alerts_ for alert notifications, _{env}-frankingstein-alerts_ for metrics updates, _{env}-frankingstein-configuration_ for takeover configurations, and _{env}-custom-tool-profile_ for custom column ordering and visibility settings per user.
